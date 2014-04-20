@@ -1,37 +1,152 @@
+@import 'normalize';
+@import 'bourbon';
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+
 body {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: 'Open Sans', "Helvetica Neue",Helvetica,Arial,sans-serif;
   background: white;
+  line-height: 1.5em;
   color: #C14463;
 }
 
 header {
-  background: #0E788E;
-  color: white;
-  height: 250px;
-  padding-top: 75px;
+  background: url(../images/background.jpg);
+  height: 600px;
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  @include box-shadow(0px 2px 5px #ccc);
+}
 
-  // border-bottom: 1px solid #E32669;
+main {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
 
-  img {
+  strong {
+    font-size: 2em;
     display: block;
-    margin: 0 auto;
+    margin-bottom: 10px;
   }
 }
 
-.main {
-  height: 300px;
-  // background: url('../images/nest.png') no-repeat 20px -160px, url('../images/bird.png') no-repeat bottom right;
-  p {
-    text-align: center;
-    font-size: 2em;
-    margin: 100px;
-  }
+.juliana {
+  float: left;
+  border-radius: 100px;
+  width: 150px;
+  margin-right: 30px;
+  margin-bottom: 10px;
+  max-width: 30%;
 }
 
 footer {
-  background: #0E788E;
-  color: white;
-  font-size: 0.8em;
-  padding: 4px;
   text-align: center;
+  padding: 20px;
+
+  a {
+    text-decoration: none;
+    color: #5eac9a;
+    font-size: 1.8em;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+nav {
+  width: 500px;
+  max-width: 90%;
+  margin: 0 auto;
+
+  ol {
+    padding: 0;
+  }
+
+  li {
+    list-style-type: none;
+    display: block;
+    width: 33%;
+    float: left;
+    text-align: center;
+  }
+
+  a {
+    font-size: 1.2em;
+    line-height: 2em;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.logo {
+  @include size(434px 141px);
+  max-width: 90%;
+  background: url(../images/logo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 100px auto;
+
+  @include hide-text();
+  &:before {
+    // hide-text fix
+    height: 101%;
+  }
+}
+
+.instagram {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+
+  &:before {
+    content: '';
+    @include size(72px 72px);
+    background: url(../images/instagram.png);
+    display: block;
+    margin: 0 auto;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.store {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+
+  &:before {
+    content: '';
+    @include size(72px 72px);
+    background: url(../images/store.png);
+    display: block;
+    margin: 0 auto;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.flickr {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+
+  &:before {
+    content: '';
+    @include size(72px 72px);
+    background: url(../images/flickr.png);
+    display: block;
+    margin: 0 auto;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
